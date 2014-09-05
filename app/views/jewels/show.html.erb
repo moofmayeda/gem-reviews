@@ -1,3 +1,3 @@
 <div class="page-header">
-  <h1><%= @jewel.name %> <small><%= @jewel.url %></small></h1>
+  <h1><span id="jewel-name"><%= @jewel.name %></span> <small><span id= "jewel-url"><%= @jewel.url %></span> <%= link_to "Edit", edit_jewel_path(@jewel), id: "edit-jewel-link", class: "btn btn-primary", remote: true %></small></h1>
 </div>
