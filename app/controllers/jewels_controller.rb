@@ -45,6 +45,13 @@ class JewelsController < ApplicationController
     end
   end
 
+  def destroy
+    @jewel = Jewel.find(params[:id])
+    @jewel.reviews.destroy_all
+    @jewel.destroy
+    redirect_to jewels_path
+  end
+
 private
   def jewel_params
     params.require(:jewel).permit(:name, :url)
