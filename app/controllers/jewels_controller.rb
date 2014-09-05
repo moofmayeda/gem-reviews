@@ -8,4 +8,28 @@ class JewelsController < ApplicationController
   def show
     @jewel = Jewel.find(params[:id])
   end
+
+  def new
+    @jewel = Jewel.new
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def create
+    @jewel = Jewel.new(jewel_params)
+    if @jewel.save
+      respond_to do |format|
+        format.html { redirect_to root_path}
+        format.js
+      end
+    else
+      render 'new'
+    end
+  end
+
+private
+  def jewel_params
+    params.require(:jewel).permit(:name, :url)
+  end
 end

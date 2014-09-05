@@ -1,8 +1,7 @@
 <div class="jumbotron">
   <h1>Gems</h1>
 </div>
-<ul>
-  <% @jewels.each do |jewel| %>
-    <li><%= link_to jewel.name, jewel_path(jewel) %></li>
-  <% end %>
+<ul id="all-jewels">
+  <%= render @jewels %>
 </ul>
+<%= link_to "Add a gem", new_jewel_path, id: "new-jewel-link", class: "btn btn-primary", remote: true %>
