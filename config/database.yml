@@ -1,0 +1,18 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  <<: *default
+  database: gemreviews_development
+
+test:
+  <<: *default
+  database: gemreviews_test
+
+production:
+  <<: *default
+  database: gemreviews_production
+  username: gemreviews
+  password: <%= ENV['GEMREVIEWS_DATABASE_PASSWORD'] %>
