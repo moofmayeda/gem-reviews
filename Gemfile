@@ -11,6 +11,7 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'bcrypt'
 gem 'devise'
+gem "selenium-webdriver", "~> 2.38.0"
 
 group :development do
   gem 'better_errors'
