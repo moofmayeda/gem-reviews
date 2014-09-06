@@ -5,4 +5,9 @@ FactoryGirl.define do
     password "password"
     password_confirmation "password"
   end
+
+  factory(:gem) do
+    name "gemgem"
+    url "gem.com"
+  end
 end
