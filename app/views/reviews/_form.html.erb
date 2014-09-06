@@ -1,0 +1,11 @@
+<%= form_for [@jewel, @review], remote: true do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="form-group">
+    <%= f.label :text %>
+    <%= f.text_field :text %>
+  </div>
+  <%= f.submit(class: "btn btn-success") %>
+<% end %>

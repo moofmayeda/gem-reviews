@@ -7,6 +7,7 @@ class JewelsController < ApplicationController
 
   def show
     @jewel = Jewel.find(params[:id])
+    @review = @jewel.reviews.new
   end
 
   def new
