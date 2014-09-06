@@ -9,7 +9,7 @@ describe "creating a review for a gem" do
     DatabaseCleaner.clean
     test_user = FactoryGirl.create(:user)
     login_as(test_user, :scope => :user)
-    test_gem = FactoryGirl.create(:gem)
+    test_gem = FactoryGirl.create(:jewel)
     visit '/'
     click_link 'gemgem'
     click_link 'Add a review'

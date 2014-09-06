@@ -2,5 +2,7 @@
   <h1><span id="jewel-name"><%= @jewel.name %></span> <small><span id= "jewel-url"><%= @jewel.url %></span> <%= link_to "Edit", edit_jewel_path(@jewel), id: "edit-jewel-link", class: "btn btn-default", remote: true %> <%= link_to "Delete", jewel_path(@jewel), id: "delete-jewel", class: "btn btn-danger", method:"delete" %></small></h1>
 </div>
 <span id="edit-form-goes-here"></span>
-<%= render @jewel.reviews %>
+<div id="all-reviews">
+  <%= render @jewel.reviews %>
+</div>
 <%= link_to "Add a review", new_jewel_review_path(@jewel, @review), id: "new-review-link", class: "btn btn-primary", remote: true %>
