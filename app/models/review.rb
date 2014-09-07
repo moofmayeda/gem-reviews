@@ -5,5 +5,8 @@ class Review < ActiveRecord::Base
   belongs_to :user
   belongs_to :jewel
 
+  has_many :upvotes
+  has_many :downvotes
+
   default_scope { order('created_at DESC') }
 end

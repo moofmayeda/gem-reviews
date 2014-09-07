@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   resources :jewels do
     resources :reviews
   end
+
+  match('/reviews/:id/upvotes', {:via => :post, :to => 'upvotes#create', as: :review_upvotes})
+  match('/reviews/:id/downvotes', {:via => :post, :to => 'downvotes#create', as: :review_downvotes})
 end
