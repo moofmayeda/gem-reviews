@@ -2,7 +2,11 @@
   <div class="panel panel-default" id="review_<%= review.id %>">
     <div class="panel-heading">
       <h3 class="panel-title">
-        <span id="review-title-<%= review.id %>"><%= review.title %></span> <%= review.upvotes.count %><%= link_to "<span class='glyphicon glyphicon-thumbs-up'>".html_safe, review_upvotes_path(review), method: "post" %></span> <%= review.downvotes.count %><span class="glyphicon glyphicon-thumbs-down"></span>
+        <span id="review-title-<%= review.id %>"><%= review.title %></span>
+        <%= link_to "<span class='glyphicon glyphicon-thumbs-up'>".html_safe, review_upvotes_path(review), method: "post", remote: true %></span>
+        <span id="review-upvotes-<%= review.id %>"><%= review.upvotes.count %></span>
+        <%= link_to "<span class='glyphicon glyphicon-thumbs-down'>".html_safe, review_downvotes_path(review), method: "post", remote: true %></span>
+        <span id="review-downvotes-<%= review.id %>"><%= review.downvotes.count %></span>
         <% if current_user == review.user %>
           <%= link_to "Delete", jewel_review_path(review.jewel,review), id: "delete-review-link-#{review.id}", class: "pull-right", method: "delete", remote: true %>
           <%= link_to "Edit", edit_jewel_review_path(review.jewel,review), id: "edit-review-link-#{review.id}", class: "edit-review-links pull-right", remote: true %>
