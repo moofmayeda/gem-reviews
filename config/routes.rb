@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:index, :show]
   resources :jewels do
-    resources :reviews
+    resources :reviews, except: [:index, :show]
   end
 
   match('/reviews/:id/upvotes', {:via => :post, :to => 'upvotes#create', as: :review_upvotes})
