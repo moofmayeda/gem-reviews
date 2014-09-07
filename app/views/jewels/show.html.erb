@@ -1,5 +1,9 @@
 <div class="page-header">
-  <h1><span id="jewel-name"><%= @jewel.name %></span> <small><span id= "jewel-url"><%= @jewel.url %></span> <%= link_to "Edit", edit_jewel_path(@jewel), id: "edit-jewel-link", class: "btn btn-default", remote: true %> <%= link_to "Delete", jewel_path(@jewel), id: "delete-jewel", class: "btn btn-danger", method:"delete" %></small></h1>
+  <h1><span id="jewel-name"><%= @jewel.name %></span> <small><span id= "jewel-url"><%= @jewel.url %></span>
+  <% if user_signed_in? %>
+     <%= link_to "Edit", edit_jewel_path(@jewel), id: "edit-jewel-link", class: "btn btn-default", remote: true %> <%= link_to "Delete", jewel_path(@jewel), id: "delete-jewel", class: "btn btn-danger", method:"delete" %>
+  <% end %>
+  </small></h1>
 </div>
 <span id="edit-form-goes-here"></span>
 <div id="all-reviews">
