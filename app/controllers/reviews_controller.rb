@@ -23,6 +23,25 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @jewel = Jewel.find(params[:jewel_id])
+    @review = Review.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def update
+    @jewel = Jewel.find(params[:jewel_id])
+    @review = Review.find(params[:id])
+    if @review.update(review_params)
+      respond_to do |format|
+        format.html { redirect_to jewel_path(@jewel) }
+        format.js
+      end
+    end
+  end
+
 private
   def review_params
     params.require(:review).permit(:title, :text)

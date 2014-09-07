@@ -3,6 +3,7 @@
 </div>
 <span id="edit-form-goes-here"></span>
 <div id="all-reviews">
+  <span id="edit-review-form-goes-here"></span>
   <%= render @jewel.reviews %>
 </div>
 <%= link_to "Add a review", new_jewel_review_path(@jewel, @review), id: "new-review-link", class: "btn btn-primary", remote: true %>

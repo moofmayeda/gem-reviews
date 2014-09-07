@@ -1,0 +1,4 @@
+$('.edit-review-links').show();
+$('#review-title-<%= @review.id %>').text("<%= @review.title %>");
+$('#review-text-<%= @review.id %>').text("<%= @review.text %>");
+$('#edit_review_<%= @review.id %>').hide();
