@@ -42,6 +42,16 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @jewel = Jewel.find(params[:jewel_id])
+    @review = Review.find(params[:id])
+    @review.destroy
+    respond_to do |format|
+      format.html { redirect_to jewel_path(@jewel) }
+      format.js
+    end
+  end
+
 private
   def review_params
     params.require(:review).permit(:title, :text)

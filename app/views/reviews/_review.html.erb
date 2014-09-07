@@ -4,7 +4,8 @@
       <h3 class="panel-title">
         <span id="review-title-<%= review.id %>"><%= review.title %></span>
         <% if current_user == review.user %>
-          <span class='pull-right'><%= link_to "Edit", edit_jewel_review_path(review.jewel,review), id: "edit-review-link-#{review.id}", class: "edit-review-links", remote: true %></span>
+          <%= link_to "Delete", jewel_review_path(review.jewel,review), id: "delete-review-link-#{review.id}", class: "pull-right", method: "delete", remote: true %>
+          <%= link_to "Edit", edit_jewel_review_path(review.jewel,review), id: "edit-review-link-#{review.id}", class: "edit-review-links pull-right", remote: true %>
         <% end %>
         <%= link_to review.user.name, user_path(review.user), class: "pull-right" %>
       </h3>
